@@ -1,0 +1,61 @@
+logo='''
+
+,adPPYba, ,adPPYYba,  ,adPPYba, ,adPPYba, ,adPPYYba, 8b,dPPYba,
+a8"     "" ""     'Y8 a8P_____88 I8[    "" ""     'Y8 88P'   "Y8
+8b         ,adPPPPP88 8PP"""""""  '"Y8ba,  ,adPPPPP88 88
+"8a,   ,aa 88,    ,88 "8b,   ,aa aa    ]8I 88,    ,88 88
+ '"Ybbd8"' '"8bbdP"Y8  '"Ybbd8"' '"YbbdP"' '"8bbdP"Y8 88
+            88             88
+           ""             88
+                          88
+ ,adPPYba, 88 8b,dPPYba,  88,dPPYba,   ,adPPYba, 8b,dPPYba,
+a8"     "" 88 88P'    "8a 88P'    "8a a8P_____88 88P'   "Y8
+8b         88 88       d8 88       88 8PP""""""" 88
+"8a,   ,aa 88 88b,   ,a8" 88       88 "8b,   ,aa 88
+ '"Ybbd8"' 88 88'YbbdP"'  88       88  '"Ybbd8"' 88
+              88
+              88
+'''
+
+def encrypte(input,shift):
+  password=""
+  for i in input:
+
+    indexx=alphabet.index(i)
+
+    real_index=indexx+shift
+
+    if real_index>=len(alphabet):
+
+      real_index = real_index % len(alphabet)
+    password+=alphabet[real_index]
+
+  print(password)
+
+def decrypte(input,shift):
+  password=""
+  for i in input:
+
+    indexx=alphabet.index(i)
+    real_index=indexx-shift
+    password+=alphabet[real_index]
+
+  print(password)
+
+
+
+print(logo)
+print("Welcome to the Caesar Cipher program, where we will encrypt and decrypt messages by shifting the letters of the alphabet!\n")
+alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's', 't', 'u', 'v', 'w', 'x', 'y', 'z']
+text=input("if you want encryption write 'encode' otherwise write 'decode' for decrypte").lower()
+password=input("Write your password").lower()
+shift=int(input("How many shift do you want ? "))
+
+if text=="encode":
+  encrypte(password,shift)
+elif text=="decode":
+  decrypte(password,shift)
+else:
+  print("please run again and write correctly what do you want")
+
+
