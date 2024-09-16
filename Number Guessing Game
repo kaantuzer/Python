@@ -1,0 +1,33 @@
+import random
+
+def compare(number,choisen):
+  if number>choisen:
+    print("Too high")
+  elif number<choisen:
+    print("Too low")
+  elif number==choisen:
+    return number
+
+print("Welcome to the Number Guessing Game! I'm thinking of a number between 1 and 100.\n")
+dificulty=input("Easy or Hard").lower()
+know=True
+count=0
+if dificulty=="easy":
+  count=10
+elif dificulty=="hard":
+  count=5
+
+number=random.randint(1,100)
+
+while know:
+  print(f"You have {count} attemps remaining to guess the number \n ")
+  guess=int(input("Guess: "))
+  y=compare(guess,number)
+  count-=1
+  if y==number:
+    know=False
+    print(f"You won with {count} attempt")
+  elif count==0:
+    print("No more attempt , you lose ...")
+    know=False
+
