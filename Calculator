@@ -1,0 +1,77 @@
+logo='''
+_____________________
+|  _________________  |
+| | KaanTuzer    0. | |  .----------------.  .----------------.  .----------------.  .----------------.
+| |_________________| | | .--------------. || .--------------. || .--------------. || .--------------. |
+|  ___ ___ ___   ___  | | |     ______   | || |      __      | || |   _____      | || |     ______   | |
+| | 7 | 8 | 9 | | + | | | |   .' ___  |  | || |     /  \     | || |  |_   _|     | || |   .' ___  |  | |
+| |___|___|___| |___| | | |  / .'   \_|  | || |    / /\ \    | || |    | |       | || |  / .'   \_|  | |
+| | 4 | 5 | 6 | | - | | | |  | |         | || |   / ____ \   | || |    | |   _   | || |  | |         | |
+| |___|___|___| |___| | | |  \ '.___.'\  | || | _/ /    \ \_ | || |   _| |__/ |  | || |  \ '.___.'\  | |
+| | 1 | 2 | 3 | | x | | | |   '._____.'  | || ||____|  |____|| || |  |________|  | || |   '._____.'  | |
+| |___|___|___| |___| | | |              | || |              | || |              | || |              | |
+| | . | 0 | = | | / | | | '--------------' || '--------------' || '--------------' || '--------------' |
+| |___|___|___| |___| |  '----------------'  '----------------'  '----------------'  '----------------'
+|_____________________|'''
+
+def add(a,b):
+  return a+b
+def subtract(a,b):
+  return a-b
+def multiply(a,b):
+  return a*b
+def divide(a,b):
+  return a/b
+
+print(logo)
+print("\n"*2)
+
+def calculator():
+
+  first_number=int(input("What is the first number"))
+  cont=True
+
+  x=0
+
+  while cont==True:
+
+
+    print('''
+    +
+    -
+    *
+    /
+    \n''')
+
+    operation=input("Choose your operation that you want")
+
+
+    second_number=int(input("What is your second number"))
+
+    if operation == "+":
+      x=add(first_number,second_number)
+    elif operation == "-":
+      x=subtract(first_number,second_number)
+    elif operation == "*":
+      x=multiply(first_number,second_number)
+    elif operation == "/":
+      x=divide(first_number,second_number)
+    else:
+      print("----- Please write your operation correctly ----- \n")
+
+    print(f"Your score is: {first_number} {operation} {second_number} = {x} ")
+
+    ask=input("if you want more calculation write 'y' , for new calculation write 'n' or for end write 'e' ")
+
+    if ask=="n":
+      calculator()
+    elif ask=="y":
+      first_number=x
+    elif ask=="e":
+      cont=False
+      print(f"Your final score is : {x} Good Bye !")
+    else:
+      ask=input("You wrote in a wrong way please if you want more calculation write 'y' , for new calculation write 'n' or for end write 'e' ")
+
+calculator()
+
